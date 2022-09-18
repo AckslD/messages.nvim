@@ -1,6 +1,8 @@
 # messages.nvim
 Capture and show any messages in a customisable (floating) buffer.
 
+![gscreenshot_2022-09-18-134000](https://user-images.githubusercontent.com/23341710/190900297-3914fddd-cf39-49b1-b870-642b80b389f1.png)
+
 ## Installation
 For example using [`packer`](https://github.com/wbthomason/packer.nvim):
 ```lua
