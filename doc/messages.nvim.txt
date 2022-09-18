@@ -14,6 +14,11 @@ Table of Contents                            *messages.nvim-table-of-contents*
 
 Capture and show any messages in a customisable (floating) buffer.
 
+<div class="figure">
+<img src="https://user-images.githubusercontent.com/23341710/190900297-3914fddd-cf39-49b1-b870-642b80b389f1.png" title="fig:"/>
+<p class="caption">gscreenshot_2022-09-18-134000</p>
+</div>
+
 INSTALLATION                                      *messages.nvim-installation*
 
 For example using `packer` <https://github.com/wbthomason/packer.nvim>:
