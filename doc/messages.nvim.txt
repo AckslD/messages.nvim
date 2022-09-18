@@ -5,8 +5,8 @@ Table of Contents                            *messages.nvim-table-of-contents*
 
 1. messages.nvim                                 |messages.nvim-messages.nvim|
   - Installation                                  |messages.nvim-installation|
-  - Configuration                                |messages.nvim-configuration|
   - Usage                                                |messages.nvim-usage|
+  - Configuration                                |messages.nvim-configuration|
   - Credit                                              |messages.nvim-credit|
 
 ==============================================================================
@@ -23,6 +23,32 @@ For example using `packer` <https://github.com/wbthomason/packer.nvim>:
       'AckslD/messages.nvim',
       config = 'require("messages").setup()',
     }
+<
+
+
+USAGE                                                    *messages.nvim-usage*
+
+Prefix and command with `Messages`, for example:
+
+>
+    :Messages messages
+<
+
+
+You can also pass any lua object to `require('messages.api').capture_thing`. A
+tip is to add the following global function in your config:
+
+>
+    Msg = function(...)
+      require('messages.api').capture_thing(...)
+    end
+<
+
+
+Then you can do for example
+
+>
+    :lua Msg(vim.lsp)
 <
 
 
@@ -62,32 +88,6 @@ These are the defaults:
       post_open_float = function(winnr)
       end
     })
-<
-
-
-USAGE                                                    *messages.nvim-usage*
-
-Prefix and command with `Messages`, for example:
-
->
-    :Messages messages
-<
-
-
-You can also pass any lua object to `require('messages.api').capture_thing`. A
-tip is to add the following global function in your config:
-
->
-    M = function(...)
-      require('messages.api').capture_thing(...)
-    end
-<
-
-
-Then you can do for example
-
->
-    :lua M(vim.lsp)
 <
 
 
