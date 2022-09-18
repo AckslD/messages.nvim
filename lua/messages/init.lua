@@ -1,0 +1,22 @@
+local M = {}
+
+local update_config = function(opts)
+  local config = require('messages.config')
+  opts = opts or {}
+  config.settings = vim.tbl_extend('force', config.settings, opts)
+end
+
+local create_commands = function()
+  vim.api.nvim_create_user_command(
+    'Messages',
+    function(opts) require('messages.api').capture_cmd(opts.args) end,
+    {nargs = '+'}
+  )
+end
+
+M.setup = function(opts)
+  update_config(opts)
+  create_commands()
+end
+
+return M
