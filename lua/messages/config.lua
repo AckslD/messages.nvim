@@ -19,7 +19,7 @@ M.settings = {
     return {
       relative = 'editor',
       width = gwidth - 2,
-      height = clip_val(1, #lines, gheight * 0.5),
+      height = math.floor(clip_val(1, #lines, gheight * 0.5)),
       anchor = 'SW',
       row = gheight - 1,
       col = 0,

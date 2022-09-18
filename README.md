@@ -10,6 +10,23 @@ use {
 }
 ```
 
+## Usage
+Prefix and command with `Messages`, for example:
+```
+:Messages messages
+```
+
+You can also pass any lua object to `require('messages.api').capture_thing`. A tip is to add the following global function in your config:
+```lua
+Msg = function(...)
+  require('messages.api').capture_thing(...)
+end
+```
+Then you can do for example
+```
+:lua Msg(vim.lsp)
+```
+
 ## Configuration
 Pass a dictionary into `require("messages").setup()` with callback functions.
 These are the defaults:
@@ -44,23 +61,6 @@ require('messages').setup({
   post_open_float = function(winnr)
   end
 })
-```
-
-## Usage
-Prefix and command with `Messages`, for example:
-```
-:Messages messages
-```
-
-You can also pass any lua object to `require('messages.api').capture_thing`. A tip is to add the following global function in your config:
-```lua
-M = function(...)
-  require('messages.api').capture_thing(...)
-end
-```
-Then you can do for example
-```
-:lua M(vim.lsp)
 ```
 
 ## Credit
