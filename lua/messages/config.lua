@@ -30,8 +30,7 @@ M.settings = {
     }
   end,
   -- what to do after opening the float
-  post_open_float = function(winnr)
-  end
+  post_open_float = function(winnr) end,
 }
 
 return M

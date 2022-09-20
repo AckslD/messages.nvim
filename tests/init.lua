@@ -14,5 +14,5 @@ require('messages').setup({
       border = 'rounded',
       zindex = 1,
     }
-  end
+  end,
 })
