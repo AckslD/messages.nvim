@@ -7,6 +7,7 @@ M.open_float = function(text)
   local lines = vim.split(text, '\n')
   local winnr = settings.prepare_buffer(settings.buffer_opts(lines))
   vim.api.nvim_buf_set_lines(vim.fn.bufnr(), 0, -1, true, lines)
+  settings.post_open_float(winnr)
   return winnr
 end
 
