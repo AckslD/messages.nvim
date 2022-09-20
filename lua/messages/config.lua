@@ -1,9 +1,9 @@
-local clip_val = require('messages.utils').clip_val
+local clip_val = require("messages.utils").clip_val
 
 local M = {}
 
 M.settings = {
-  command_name = 'Messages',
+  command_name = "Messages",
   -- should prepare a new buffer and return the winid
   -- by default opens a floating window
   -- provide a different callback to change this behaviour
@@ -18,20 +18,19 @@ M.settings = {
     local gheight = vim.api.nvim_list_uis()[1].height
     local gwidth = vim.api.nvim_list_uis()[1].width
     return {
-      relative = 'editor',
+      relative = "editor",
       width = gwidth - 2,
       height = math.floor(clip_val(1, #lines, gheight * 0.5)),
-      anchor = 'SW',
+      anchor = "SW",
       row = gheight - 1,
       col = 0,
-      style = 'minimal',
-      border = 'rounded',
+      style = "minimal",
+      border = "rounded",
       zindex = 1,
     }
   end,
   -- what to do after opening the float
-  post_open_float = function(winnr)
-  end
+  post_open_float = function(winnr) end,
 }
 
 return M
