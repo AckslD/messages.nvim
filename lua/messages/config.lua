@@ -3,6 +3,7 @@ local clip_val = require('messages.utils').clip_val
 local M = {}
 
 M.settings = {
+  command_name = 'Messages',
   -- should prepare a new buffer and return the winid
   -- by default opens a floating window
   -- provide a different callback to change this behaviour

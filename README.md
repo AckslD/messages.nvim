@@ -34,6 +34,7 @@ Pass a dictionary into `require("messages").setup()` with callback functions.
 These are the defaults:
 ```lua
 require('messages').setup({
+  command_name = 'Messages',
   -- should prepare a new buffer and return the winid
   -- by default opens a floating window
   -- provide a different callback to change this behaviour
