@@ -16,8 +16,11 @@ M.capture_thing = function(...)
 end
 
 M.capture_cmd = function(cmd)
-  local output = vim.api.nvim_exec(cmd, true)
-  M.open_float(output)
+  if cmd == '' then
+    cmd = 'messages'
+  end
+
+  M.open_float(vim.api.nvim_exec(cmd, true))
 end
 
 return M

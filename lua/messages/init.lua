@@ -11,7 +11,7 @@ local create_commands = function()
   vim.api.nvim_create_user_command(command_name, function(opts)
     require('messages.api').capture_cmd(opts.args)
   end, {
-    nargs = '+',
+    nargs = '*',
     desc = 'messages.nvim (capture cmd)',
   })
 end
