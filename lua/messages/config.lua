@@ -49,7 +49,9 @@ M.settings = {
   end,
   -- what to do after opening the float
   post_open_float = function(winnr, bufnr)
-    print(string.format('open_float(win=%s,buf=%s)', winnr, bufnr))
+    local _ = winnr -- unused parameter
+    local _ = bufnr -- unused parameter
+    -- print(string.format('open_float(win=%s,buf=%s)', winnr, bufnr))
   end,
 }
 
