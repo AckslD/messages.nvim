@@ -2,7 +2,7 @@ vim.o.runtimepath = vim.o.runtimepath .. ',./rtps/plenary.nvim'
 vim.o.runtimepath = vim.o.runtimepath .. ',.'
 
 require('messages').setup({
-  buffer_opts = function(lines)
+  window_opts = function(lines)
     return {
       relative = 'editor',
       width = 100,
