@@ -15,4 +15,9 @@ require('messages').setup({
       zindex = 1,
     }
   end,
+  buffer_opts = function(lines)
+    return {
+      filetype = 'messages',
+    }
+  end
 })
