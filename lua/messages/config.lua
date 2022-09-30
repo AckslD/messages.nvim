@@ -8,23 +8,23 @@ M.settings = {
   -- prepare a new buffer and return the winnr and bufnr
   -- by default opens a floating window
   -- provide a different callback to change this behaviour
-  -- @param win_opts: the return value from float_opts
-  -- @param buf_opts: the buffer local options (filetype, language, etc)
-  prepare = function(win_opts, buf_opts)
+  -- @param window_opts: the return value from float_opts
+  -- @param bufdow_opts: the buffer local options (filetype, language, etc)
+  prepare = function(window_opts, buffer_opts)
     -- open a new scratch buffer
     local buf = vim.api.nvim_create_buf(false, true)
     -- set the buffer local options
-    for k, v in pairs(buf_opts) do
+    for k, v in pairs(buffer_opts) do
       vim.api.nvim_buf_set_option(buf, k, v)
     end
     -- open the messages capture window
-    local win = vim.api.nvim_open_win(buf, true, win_opts)
+    local win = vim.api.nvim_open_win(buf, true, window_opts)
     -- return the winnr and bufnr
     return win, buf
   end,
   -- should return options passed to prepare
   -- @param lines: a list of the lines of text
-  win_opts = function(lines)
+  window_opts = function(lines)
     local gheight = vim.api.nvim_list_uis()[1].height
     local gwidth = vim.api.nvim_list_uis()[1].width
     return {
@@ -41,7 +41,7 @@ M.settings = {
   end,
   -- should return options passed to prepare
   -- @param lines: a list of the lines of text
-  buf_opts = function(lines)
+  buffer_opts = function(lines)
     local _ = lines -- unused parameter
     return {
       filetype = 'messages',

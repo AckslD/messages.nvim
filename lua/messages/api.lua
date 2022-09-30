@@ -6,7 +6,7 @@ local settings = require('messages.config').settings
 M.open_float = function(text)
   local lines = vim.split(text, '\n')
 
-  local win, buf = settings.prepare(settings.win_opts(lines), settings.buf_opts(lines))
+  local win, buf = settings.prepare(settings.window_opts(lines), settings.buffer_opts(lines))
 
   -- populate the buffer with captured text
   vim.api.nvim_buf_set_lines(buf, 0, -1, true, lines)
