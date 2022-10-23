@@ -5,6 +5,7 @@ local M = {}
 M.settings = {
   command_name = 'Messages',
   border = 'rounded',
+  buffer_name = 'messages',
   -- should prepare a new buffer and return the winid
   -- by default opens a floating window
   -- provide a different callback to change this behaviour
