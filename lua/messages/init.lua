@@ -13,6 +13,7 @@ local create_commands = function()
   end, {
     nargs = '*',
     desc = 'messages.nvim (capture cmd)',
+    complete = 'command',
   })
 end
 
